@@ -1,0 +1,12 @@
+Weight-space transfer of a neural quantum state
+Copyright 2026 Paul Gauthier
+
+This repository contains a re-implementation of, and weights derived from, the Vision Transformer neural
+quantum state released by Riccardo Rende, Luciano Loris Viteritti et al. under the Apache License 2.0
+(https://huggingface.co/nqs-models/j1j2_square_10x10_05):
+
+  wsp/vit.py re-implements the released Flax model code (transformer.py, attentions.py) in plain JAX.
+  weights/*_params.npz are that network's revision "main" weights, edited by wsp/transfer.py and then
+  fine-tuned on 12x12 to 18x18 lattices.
+
+The released weights themselves are not redistributed here; scripts/download_base.py fetches them.

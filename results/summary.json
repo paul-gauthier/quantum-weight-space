@@ -1,0 +1,113 @@
+{
+ "model": "spin-1/2 J1-J2 Heisenberg, square lattice, J2/J1 = 0.5, periodic; energy per site with S = sigma/2",
+ "sizes": {
+  "12": {
+   "edits_only": {
+    "E": -0.49564,
+    "err": 0.0001,
+    "source": "results/edits_only.json"
+   },
+   "fine_tuned": {
+    "E": -0.496903587976862,
+    "err": 4.225995138081414e-05,
+    "steps": 300,
+    "weights": "weights/ft12_params.npz",
+    "source": "results/finetune/ft12_mixed.json: 8,192 mixed-start chains, 40 sweeps"
+   },
+   "lanczos": {
+    "E": -0.4970185620951561,
+    "err": 1.5909598745920004e-05,
+    "samples": 16384,
+    "guide_floor": 0.02,
+    "source": "results/lanczos/12/pooled.json (shards in results/lanczos/12/)"
+   },
+   "best_published": {
+    "E": -0.497224,
+    "method": "ResNet2 139,008 params, MinSR, + one Lanczos step",
+    "ref": "Chen & Heyl 2024, Extended Data Fig. 3 (digitized)"
+   },
+   "lanczos_minus_best_published": 0.000205437904843897
+  },
+  "14": {
+   "edits_only": {
+    "E": -0.49399,
+    "err": 0.0001,
+    "source": "results/edits_only.json"
+   },
+   "fine_tuned": {
+    "E": -0.4966649196216382,
+    "err": 3.0142489461414267e-05,
+    "steps": 500,
+    "weights": "weights/ft14_params.npz",
+    "source": "weights/ft14.json 'eval': 16,384 fresh chains, 30 sweeps"
+   },
+   "lanczos": {
+    "E": -0.49675326782514245,
+    "err": 2.5323859707705817e-05,
+    "samples": 16384,
+    "guide_floor": 0.02,
+    "source": "results/lanczos/14/pooled.json (shards in results/lanczos/14/)"
+   },
+   "best_published": {
+    "E": -0.49674,
+    "method": "CNN 106,529 params, + one Lanczos step",
+    "ref": "Liang et al. 2023, Table 1"
+   },
+   "lanczos_minus_best_published": -1.326782514243785e-05
+  },
+  "16": {
+   "edits_only": {
+    "E": -0.49303,
+    "err": 0.0001,
+    "source": "results/edits_only.json"
+   },
+   "fine_tuned": {
+    "E": -0.4964695262734158,
+    "err": 1.3280524995918002e-05,
+    "steps": 300,
+    "weights": "weights/ft16_params.npz",
+    "source": "results/sanity/audit.json 'ft16': 8,192 mixed-start chains, sweeps 110-200 of 200"
+   },
+   "lanczos": {
+    "E": -0.49651214066471255,
+    "err": 2.181952514602746e-05,
+    "samples": 8192,
+    "guide_floor": 0.02,
+    "source": "results/lanczos/16/pooled.json (shards in results/lanczos/16/)"
+   },
+   "best_published": {
+    "E": -0.496914,
+    "method": "CNN-MPS",
+    "ref": "Fan et al. 2026 (arXiv:2603.14425v1), Table 1"
+   },
+   "lanczos_minus_best_published": 0.00040185933528746887
+  },
+  "18": {
+   "edits_only": {
+    "E": -0.4922,
+    "err": 0.0001,
+    "source": "results/edits_only.json"
+   },
+   "fine_tuned": {
+    "E": -0.49636840940855975,
+    "err": 3.200231850953156e-05,
+    "steps": 600,
+    "weights": "weights/ft18_params.npz",
+    "source": "results/finetune/ft18_mixed.json: 8,192 mixed-start chains, 40 sweeps"
+   },
+   "lanczos": {
+    "E": -0.49646851369409856,
+    "err": 1.6308692601912122e-05,
+    "samples": 16384,
+    "guide_floor": 0.02,
+    "source": "results/lanczos/18/pooled.json (shards in results/lanczos/18/)"
+   },
+   "best_published": {
+    "E": -0.496513,
+    "method": "CNN + one Lanczos step",
+    "ref": "Liang et al. 2023, Sec. 3.2.2"
+   },
+   "lanczos_minus_best_published": 4.448630590142555e-05
+  }
+ }
+}

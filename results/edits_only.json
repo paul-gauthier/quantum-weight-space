@@ -1,0 +1,108 @@
+{
+ "description": "Energy per site of the released 10x10 Plain network with the three weight-space edits and no training (the 'WSP edits only' column). Each run sampled the attention fill + window head with the head's own phase on fresh mixed-start chains (40 sweeps); the sign rule leaves |psi| unchanged, so its energy is the same samples reweighted to the rule's phase (E_sign_rule). The table value averages the 16,384-chain runs; the post quotes it with an uncertainty of 1e-4.",
+ "settings": {
+  "all": "Settings(fill='uniform', fill_heads='nonlocal', local=0.7, window=True, window_avg_units=(3,), sign_rule=True)",
+  "12": "also rest_fill='dealias', dealias=0.1, rest_heads='all' (a small extra attention-fill rule used only at 12x12)",
+  "note": "These runs also set head gains and a phase rotor (kappa, kappa_unit3, kappa_phase, rotor). With the window head and the sign rule those act only on the global head's phase, which the rule replaces, so they do not change E_sign_rule. Apart from 12x12, the settings are the fine-tuning start 'ours' in scripts/finetune.py."
+ },
+ "table": {
+  "12": {
+   "E": -0.49564,
+   "runs": [
+    "cw_12_a"
+   ]
+  },
+  "14": {
+   "E": -0.49399,
+   "runs": [
+    "cw_14_a",
+    "cw_14_b"
+   ]
+  },
+  "16": {
+   "E": -0.49303,
+   "runs": [
+    "cw_16_a",
+    "cw_16_b"
+   ]
+  },
+  "18": {
+   "E": -0.4922,
+   "runs": [
+    "cw_18_a"
+   ]
+  }
+ },
+ "runs": [
+  {
+   "run": "cw_12_a",
+   "l": 12,
+   "chains": 16384,
+   "E_sign_rule": -0.49564051457138486,
+   "E_own_phase": -0.49543673960391554
+  },
+  {
+   "run": "cw_14_a",
+   "l": 14,
+   "chains": 16384,
+   "E_sign_rule": -0.49398180089001353,
+   "E_own_phase": -0.4930343746230559
+  },
+  {
+   "run": "cw_14_b",
+   "l": 14,
+   "chains": 16384,
+   "E_sign_rule": -0.49400002681443766,
+   "E_own_phase": -0.4929508313796586
+  },
+  {
+   "run": "cw_16_a",
+   "l": 16,
+   "chains": 16384,
+   "E_sign_rule": -0.4930375249894665,
+   "E_own_phase": -0.4904458581984535
+  },
+  {
+   "run": "cw_16_b",
+   "l": 16,
+   "chains": 16384,
+   "E_sign_rule": -0.49301437062415593,
+   "E_own_phase": -0.49044803239732393
+  },
+  {
+   "run": "cw_18_a",
+   "l": 18,
+   "chains": 16384,
+   "E_sign_rule": -0.4921962874473861,
+   "E_own_phase": -0.48716388580639214
+  },
+  {
+   "run": "cw_18_s1813",
+   "l": 18,
+   "chains": 4096,
+   "E_sign_rule": -0.49210762225928084,
+   "E_own_phase": -0.487408008898095
+  },
+  {
+   "run": "cw_18_s1814",
+   "l": 18,
+   "chains": 4096,
+   "E_sign_rule": -0.4921592142620167,
+   "E_own_phase": -0.48697567010934273
+  }
+ ],
+ "cross_check_released_code": {
+  "command": "PYTHONPATH=. python -u scripts/ft_audit.py --zero-shot L --chains 4096 --sweeps 60 --every 10 --fp32 --output OUT.npz; python scripts/analyze_audit.py zsL=OUT.npz",
+  "note": "The untrained 'ours' start measured with this repository's code (sweeps 40-60 of 60).",
+  "14": {
+   "E": -0.49397838157343116,
+   "err": 4.911315859674299e-05,
+   "chains": 4096
+  },
+  "18": {
+   "E": -0.4921182616273896,
+   "err": 4.4357473305482395e-05,
+   "chains": 4096
+  }
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "model": "spin-1/2 J1-J2 square lattice, J2/J1 = 0.5, periodic, E/N with S = sigma/2",
+ "checked": "2026-11-03",
+ "best_variational": {
+  "12": {"E": -0.497224, "err_digitization": 3e-6, "method": "ResNet2 139,008 params, MinSR, + one Lanczos step", "sign_prior": "Marshall", "ref": "Chen & Heyl 2024, Extended Data Fig. 3 (digitized)"},
+  "14": {"E": -0.49674, "method": "CNN 106,529 params, + one Lanczos step", "sign_prior": "Marshall", "ref": "Liang et al. 2023, Table 1"},
+  "16": {"E": -0.4969140, "err": 5e-7, "method": "CNN-MPS", "sign_prior": "Marshall", "ref": "Fan et al. 2026 (arXiv:2603.14425v1), Table 1"},
+  "18": {"E": -0.496513, "method": "CNN + one Lanczos step", "sign_prior": "Marshall", "ref": "Liang et al. 2023, Sec. 3.2.2"},
+  "20": {"E": -0.4967987, "err": 6e-7, "method": "CNN-MPS, C4v", "sign_prior": "Marshall", "ref": "Fan et al. 2026, Table 1"}
+ },
+ "zero_variance_estimates": {
+  "10": {"E": -0.497715, "err": 9e-6, "ref": "Chen & Heyl 2024 text"},
+  "10_edf3": {"E": -0.497743, "ref": "Chen & Heyl 2024 Extended Data Fig. 3 (digitized)"},
+  "12": {"E": -0.497276, "ref": "Chen & Heyl 2024 Extended Data Fig. 3 (digitized)"},
+  "16": {"E": -0.496943, "ref": "Chen & Heyl 2024 Extended Data Fig. 3 (digitized)"},
+  "20": {"E": -0.49684, "err": 1e-5, "ref": "Viteritti, Rende, Sachdev, Carleo 2026 (arXiv:2602.02665v1)"}
+ },
+ "estimated_exact_fit": {"form": "E = Einf + a/L^3, weighted, sizes 10/12/16/20", "Einf": -0.496704, "a": -1.006,
+  "chi2": 2.8, "dof": 2, "systematic": 3e-5,
+  "E": {"12": -0.497286, "14": -0.497070, "16": -0.496949, "18": -0.496876, "20": -0.496830}},
+ "chen_heyl_edf3_digitized": {
+  "12": {"small_net": -0.497119, "large_net": -0.497169, "large_net_lanczos": -0.497224, "star": -0.497276},
+  "16": {"small_net": -0.496717, "large_net": -0.496794, "large_net_lanczos": -0.496883, "star": -0.496943},
+  "20": {"large_net_lanczos": -0.496492, "star_assumed_slope": -0.496648},
+  "10": {"small_net": -0.497628, "large_net": -0.497663, "large_net_lanczos": -0.497694, "star": -0.497743}
+ },
+ "liang_2023_table1_J2_0.5_lanczos": {"10": -0.49747, "12": -0.49699, "14": -0.49674, "16": -0.49659, "18": -0.49651},
+ "hu_2013_p1": {"14": -0.49638, "18": -0.49611}, "hu_2013_extrapolated_runs_low": {"10": -0.49781, "14": -0.49722, "18": -0.49717},
+ "nomura_imada_2021_rbm_pp": {"18": -0.496275}
+}
